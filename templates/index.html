@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block body %}
+<form
+  class="container my-5 py-5"
+  action="/"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="mb-3">
+    <label for="formFile" class="form-label"
+      >Choose a file To remove background</label
+    >
+    <input class="form-control" type="file" id="formFile" name="formFile" />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% if filename %}
+<p class="container">
+  <a href="/{{filename}}" download class="link-underline-secondary">Download</a>
+</p>
+{% else %}
+<p></p>
+{% endif %} {% endblock body %}
